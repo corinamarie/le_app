@@ -12,7 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int totalScore = 0;
+    int totalScoreA = 0;
+    int totalScoreB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //setting default score display
-        displayForTeamA(totalScore);
+        displayForTeamA(totalScoreA);
+        displayForTeamB(totalScoreB);
 //
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -56,25 +58,26 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //TEAM A METHODS
     //threePts score display
 
-    public void threePts (View view){
-        totalScore += 3;
-        displayForTeamA(totalScore);
+    public void threePtsA (View view){
+        totalScoreA += 3;
+        displayForTeamA(totalScoreA);
     }
 
     //twoPts score display
 
-    public void twoPts (View view){
-        totalScore += 2;
-        displayForTeamA(totalScore);
+    public void twoPtsA (View view){
+        totalScoreA += 2;
+        displayForTeamA(totalScoreA);
     }
 
     //freeThrow score display
 
-    public void freeThrow (View view){
-        totalScore += 1;
-        displayForTeamA(totalScore);
+    public void freeThrowA (View view){
+        totalScoreA += 1;
+        displayForTeamA(totalScoreA);
     }
 
     /**
@@ -83,5 +86,42 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    //TEAM B METHODS
+    //threePts score display
+
+    public void threePtsB (View view){
+        totalScoreB += 3;
+        displayForTeamB(totalScoreB);
+    }
+
+    //twoPts score display
+
+    public void twoPtsB (View view){
+        totalScoreB += 2;
+        displayForTeamB(totalScoreB);
+    }
+
+    //freeThrow score display
+
+    public void freeThrowB (View view){
+        totalScoreB += 1;
+        displayForTeamB(totalScoreB);
+    }
+
+    /**
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public void clearScore(){
+        totalScoreA = 0;
+        totalScoreB = 0;
+        displayForTeamA(totalScoreA);
+        displayForTeamB(totalScoreB);
     }
 }
