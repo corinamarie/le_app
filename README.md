@@ -5,8 +5,9 @@ SportsBall counter Android app from Udacity Android Beginner's course. Basic bas
 #
 #########################################################################################################
 #########################################################################################################
-# this application is a score counter for basketball games. it tallies 2 and 3 point shots for each team
-# and tracks total scores for each team in real time.
+#
+this application is a score counter for basketball games. it tallies 2 and 3 point shots for each team
+and tracks total scores for each team in real time.
 #
 #########################################################################################################
 #########################################################################################################
